@@ -8,7 +8,7 @@ export default function Weather(){
         <div className="Weather">
             <div className="container weather-container">
                 <SearchEngine />
-                <CurrentWeather />
+                <CurrentWeather defaultCity="Denver" />
             </div>
         </div>
     );

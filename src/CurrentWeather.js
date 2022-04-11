@@ -1,23 +1,30 @@
 import React, { useState } from "react";
-import "./CurrentWeather.css";
+import FormatDate from "./FormatDate.js";
 import axios from "axios";
 
+import "./CurrentWeather.css";
 
-export default function CurrentWeather(){
+
+export default function CurrentWeather(props){
     
     let [weatherData, setWeatherData] = useState({ready: false});
+    let [city, setCity] = useState(props.defaultCity);
+
     function handleResponse(response){
         setWeatherData({
             ready: true,
             tempereature: response.data.main.temp,
-            date: "Monday 13:50",
+            date: new Date(response.data.dt *1000),
             description: response.data.weather[0].description,
             iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
             humidity: response.data.main.humidity,
-            wind: response.data.main.wind,
+            wind: response.data.main.speed,
             city:response.data.name,
         });
 
+    }
+    function handleCityChange(event) {
+        setCity(event.target.value);
     }
 
     if (weatherData.ready) {
@@ -28,14 +35,16 @@ export default function CurrentWeather(){
                     {weatherData.city}
                 </h1>
                 <ul>
-                    <li>{weatherData.date}</li>
+                    <li>
+                        <FormatDate date={weatherData.date} />
+                    </li>
                     <li className="text-capitalize">{weatherData.description}</li>
                 </ul>
             </div>
             <div className="row">
                 <div className="col-6">
                     <img src ={weatherData.iconUrl} alt={weatherData.description} className="float-left" />
-                    <span className="temperature">{Math.round(weatherData.temperature)}</span>
+                    <span className="temperature">{weatherData.temperature}</span>
                     <span className="unit">°F</span>
                 </div>
                 <div className="col-6">
@@ -50,10 +59,8 @@ export default function CurrentWeather(){
     );
 } else {
     let apiKey = "ce7559a40e1096d539e469e7e924e165";
-    let city = "Denver";
-    let unit = "imperial"
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&unit=${unit}`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
     axios.get(apiUrl).then(handleResponse);
     return "Loading..."
-}
+    }
 }

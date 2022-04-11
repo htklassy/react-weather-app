@@ -1,13 +1,46 @@
-body {
-    text-align: left;
+ul {
+    padding: 0px;
 }
-h2{
-    color: black;
+
+li {
+    list-style: none;
+    color: #878787;
     font-size: 16px;
-    text-align: left;
+    font-weight: 100;
+    padding: 0px;
+    line-height: 18px;
+
 }
-h3 {
-    color: black;
-    font-size: 12px;
-    text-align: left;
+h1 {
+    color: #878787;
+    font-weight: 100;
+    font-size: 24px;
+
+} 
+img {
+    height: 64px;
+    width: 64px;
+    
+
+}
+.temperature {
+    font-weight: 400;
+    color: rgb(33, 33, 33);
+    font-size: 60px;
+    line-height: 64px;
+    margin-left: 0px;
+    position: relative;
+    top: 15px;
+    left: 10px;
+    
+    
+}
+.unit {
+    color: rgb(33, 33, 33);
+    font-size: 16px;
+    font-weight: 400;
+    position: relative;
+    line-height: 1;
+    top: -18px;
+    margin-left: 10px;
 }

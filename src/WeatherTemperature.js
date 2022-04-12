@@ -13,6 +13,7 @@ export default function WeatherTemperature(props){
         event.prevent.default();
         setUnit("fahrenheit");
     }
+
     if (unit === "fahrenheit") {
         return(
         <div className="WeatherTemperature">
@@ -38,6 +39,4 @@ export default function WeatherTemperature(props){
         </div>
         );
     }
-
-    
 }

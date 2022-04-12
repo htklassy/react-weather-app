@@ -13,7 +13,7 @@ export default function CurrentWeather(props){
     function handleResponse(response){
         setWeatherData({
             ready: true,
-            temperature: response.data.main.temp,
+            temperature: ((response.data.main.temp -273.15)* 9) /5 +32,
             date: new Date(response.data.dt *1000),
             description: response.data.weather[0].description,
             icon: response.data.weather[0].icon,

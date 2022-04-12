@@ -15,23 +15,16 @@ h1 {
     color: #878787;
     font-weight: 100;
     font-size: 24px;
-
-} 
-img {
-    height: 64px;
-    width: 64px;
-    
-
 }
 .temperature {
     font-weight: 400;
     color: rgb(33, 33, 33);
-    font-size: 60px;
+    font-size: 64px;
     line-height: 64px;
     margin-left: 0px;
     position: relative;
-    top: 15px;
-    left: 10px;
+    top: -5px;
+    left: 20px;
     
     
 }
@@ -41,6 +34,6 @@ img {
     font-weight: 400;
     position: relative;
     line-height: 1;
-    top: -18px;
-    margin-left: 10px;
+    top: -40px;
+    margin-left: 20px;
 }

@@ -14,6 +14,7 @@ export default function CurrentWeather(props){
     function handleResponse(response){
         setWeatherData({
             ready: true,
+            coordinates: response.data.coord,
             temperature: ((response.data.main.temp -273.15)* 9) /5 +32,
             date: new Date(response.data.dt *1000),
             description: response.data.weather[0].description,
@@ -42,7 +43,7 @@ export default function CurrentWeather(props){
 
     if (weatherData.ready) {
         return(
-        <div classname="CurrentWeather">
+        <div className="CurrentWeather">
             <div className="row">
                 <form onSubmit={handleSubmit}>
                     <div className="row">
@@ -60,7 +61,7 @@ export default function CurrentWeather(props){
                     </div>
                 </form>
                 <WeatherInfo data={weatherData} />
-                <WeatherForecast />
+                <WeatherForecast coordinates={weatherData.coordinates} />
              </div>
         </div>
                

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo.js";
+import WeatherForecast from "./WeatherForecast.js";
 import axios from "axios";
 
 import "./CurrentWeather.css";
@@ -18,7 +19,7 @@ export default function CurrentWeather(props){
             description: response.data.weather[0].description,
             icon: response.data.weather[0].icon,
             humidity: response.data.main.humidity,
-            wind: response.data.main.speed,
+            wind: response.data.wind.speed,
             city:response.data.name,
         });
 
@@ -59,6 +60,7 @@ export default function CurrentWeather(props){
                     </div>
                 </form>
                 <WeatherInfo data={weatherData} />
+                <WeatherForecast />
              </div>
         </div>
                

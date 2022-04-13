@@ -2,7 +2,21 @@
     text-align: center;
 }
 
+.WeatherForecast-temperature-max {
+    font-weight: 400;
+    font-size: 14px;
+}
 .WeatherForecast-temperature-min {
-    opacity: 0.6;
     margin-left: 5px;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+}
+.WeatherForecast-day {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+.WeatherForecast-icon {
+    padding: 20px;
 }

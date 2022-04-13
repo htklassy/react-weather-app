@@ -4,7 +4,7 @@ ul {
 
 li {
     list-style: none;
-    color: #878787;
+    color: #000000;
     font-size: 16px;
     font-weight: 100;
     padding: 0px;
@@ -12,18 +12,19 @@ li {
 
 }
 h1 {
-    color: #878787;
-    font-weight: 100;
-    font-size: 24px;
+    color: #000000;
+    font-weight: 100 !important;
+    font-size: 24px !important;
+    padding: 10px 0;
 }
 .temperature {
     font-weight: 400;
-    color: rgb(33, 33, 33);
+    color: #000000;
     font-size: 64px;
     line-height: 64px;
     margin-left: 0px;
     position: relative;
-    top: -60px;
+    top: -70px;
     left: 75px;
     
     
@@ -34,6 +35,6 @@ h1 {
     font-weight: 400;
     position: relative;
     line-height: 1;
-    top: -90px;
+    top: -100px;
     margin-left: 80px;
 }
